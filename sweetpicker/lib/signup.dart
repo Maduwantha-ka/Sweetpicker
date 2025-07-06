@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 void main() {
   runApp(FoodApp());
 }
 
 class FoodApp extends StatelessWidget {
+  const FoodApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +19,8 @@ class FoodApp extends StatelessWidget {
 }
 
 class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
+
   @override
   State<SignupPage> createState() => _SignupPageState();
 }
@@ -128,18 +133,23 @@ class _SignupPageState extends State<SignupPage> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: _signup,
-                      child: Text('Sign Up'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         foregroundColor: Colors.white,
                         padding: EdgeInsets.symmetric(vertical: 16),
                       ),
+                      child: Text('Sign Up'),
                     ),
                   ),
                   SizedBox(height: 16),
                   TextButton(
                     onPressed: () {
-                      // Add navigation to login page logic here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                      );
                     },
                     child: Text('Already have an account? Login'),
                   ),

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'frogetPassword.dart';
+import 'HomePage.dart';
 
 void main() {
   runApp(FoodApp());
 }
 
 class FoodApp extends StatelessWidget {
+  const FoodApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -110,19 +114,27 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: _login,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FoodHomePage(),
+                          ),
+                        );
+                      },
+
                       child: Text('Login'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange,
-                        foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 16),
-                      ),
                     ),
                   ),
                   SizedBox(height: 16),
                   TextButton(
                     onPressed: () {
-                      // Add forgot password logic
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ForgotPasswordPage(),
+                        ),
+                      );
                     },
                     child: Text('Forgot Password?'),
                   ),
