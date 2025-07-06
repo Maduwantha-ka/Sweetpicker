@@ -6,19 +6,27 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello,world!'))),
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Hello SweetPicker',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 32),
+              ButtonRow(),
+            ],
+          ),
+        ),
+      ),
     );
   }
-}
-
-@override
-Widget build(BuildContext context) {
-  return const MaterialApp(
-    home: Scaffold(body: Center(child: ButtonRow())),
-  );
 }
 
 class ButtonRow extends StatelessWidget {
