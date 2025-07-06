@@ -17,7 +17,9 @@ class FoodApp extends StatelessWidget {
 
 class LoginPage extends StatefulWidget {
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  const LoginPage({super.key});
+  @override
+  _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {

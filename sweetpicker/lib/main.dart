@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +38,15 @@ class ButtonRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(onPressed: () {}, child: const Text('Login')),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
+          child: const Text('Login'),
+        ),
         const SizedBox(width: 16),
         ElevatedButton(onPressed: () {}, child: const Text('Signup')),
       ],
